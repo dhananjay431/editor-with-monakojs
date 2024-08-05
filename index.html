@@ -10,15 +10,24 @@
   </head>
   <body>
     <div class="row">
-      <div class="col-md-6"  id="container"></div>
-      <div class="col-md-6" id="res"></div>
+      <div class="col-md-6" style="height:100vh"  id="container">
+       
+      </div>
+      <div class="col-md-6" id="res" style="height:100vh;border :1px solid red;">
+      werwqerqwerwer
+    qwerwer</div>
     </div>
   </head>
     
     <script src="../node_modules/monaco-editor/min/vs/loader.js"></script>
     <script>
       console.log = function(data){
-         document.getElementById("res").appendChild = data;
+        const para = document.createElement("p");
+const node = document.createTextNode(`${data}`);
+
+para.appendChild(node);
+document.getElementById("res").appendChild(para);
+       
       }
       require.config({ paths: { vs: '../node_modules/monaco-editor/min/vs' } });
 
