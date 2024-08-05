@@ -1,9 +1,13 @@
 {
   "scripts": {
-    "start": "servor --reload"
+    "start": "npm --reload",
+    "b":"browserify script.js > bundle.js"
   },
   "dependencies": {
     "monaco-editor": "^0.50.0",
     "servor": "^4.0.2"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0"
   }
 }
