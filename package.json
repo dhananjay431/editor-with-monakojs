@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "start": "servor --reload"
+  },
+  "dependencies": {
+    "monaco-editor": "^0.50.0",
+    "servor": "^4.0.2"
+  }
+}

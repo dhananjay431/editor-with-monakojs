@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Monaco Editor Demo</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/monaco-editor/min/vs/base/vs.css"
+    />
+  </head>
+  <body>
+    <div id="container" style="width: 800px; height: 600px"></div>
+    <script src="../node_modules/monaco-editor/min/vs/loader.js"></script>
+    <script>
+      require.config({ paths: { vs: '../node_modules/monaco-editor/min/vs' } });
+
+      require(['vs/editor/editor.main'], function () {
+        const editor = monaco.editor.create(
+          document.getElementById('container'),
+          {
+            value: '// Your initial code here',
+            language: 'javascript',
+            theme: 'vs-dark',
+          }
+        );
+
+        editor.onDidChangeModelContent((event) => {
+          // Code that will be executed whenever the editor content changes
+          
+          const value = editor.getValue();
+             function log(data){
+               console.log(data);
+             }
+             let res = new Function('log',value);
+             res();
+        });
+      });
+    </script>
+  </body>
+</html>
